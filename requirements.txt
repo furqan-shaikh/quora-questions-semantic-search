@@ -1,0 +1,3 @@
+pinecone-client[grpc]
+datasets
+sentence-transformers

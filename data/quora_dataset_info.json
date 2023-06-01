@@ -1,0 +1,34 @@
+{
+    "description": "The Quora dataset is composed of question pairs, and the task is to determine if the questions are paraphrases of each other (have the same meaning).",
+    "homepage": "https://www.quora.com/q/quoradata/First-Quora-Dataset-Release-Question-Pairs",
+    "features": {
+        "questions": {
+            "feature": {
+                "id": {
+                    "dtype": "int32",
+                    "_type": "Value"
+                },
+                "text": {
+                    "dtype": "string",
+                    "_type": "Value"
+                }
+            },
+            "_type": "Sequence"
+        },
+        "is_duplicate": {
+            "dtype": "bool",
+            "_type": "Value"
+        }
+    },
+    "splits": {
+        "train": {
+            "name": "train",
+            "num_bytes": 58155130,
+            "num_examples": 404290,
+            "dataset_name": "quora"
+        }
+    },
+    "download_size": 58176133,
+    "dataset_size": 58155130,
+    "size_in_bytes": 116331263
+}
