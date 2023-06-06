@@ -19,11 +19,11 @@ It seems that the there is a new application platform emerging with the rise and
 # How to run
 ## Setting up Pinecone
 1. Create a free account on Pinecone here.
-2. Create an index with and make sure the dimensions is set to 384
+2. Create an index and make sure the dimensions is set to 384
 3. Create an API key. Copy Index name,namespace, API Key and Environment in `constants.py` file
 
 ## Setting up Dependencies:
-`!pip install -qU pinecone-client[grpc] datasets sentence-transformers`
+`!pip install -r requirements.txt`
 
 ## Running Control Plane
 1. Run: `python control_plane.py`

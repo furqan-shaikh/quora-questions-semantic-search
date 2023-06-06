@@ -1,3 +1,5 @@
-pinecone-client[grpc]
-datasets
+pinecone-client
+datasets~=2.12.0
 sentence-transformers
+tqdm~=4.65.0
+torch~=2.0.1

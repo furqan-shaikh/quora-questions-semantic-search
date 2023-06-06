@@ -43,7 +43,7 @@ def write_file(file_name, data):
 
 
 def create_vector_embeddings_batched(questions: List[str], model: TransformerModel, pinecone_client: PineconeClient,
-                                     namespace: str):
+                                     namespace: str, index_name: str):
     batch_size = 128
     total_batches = int(len(questions) / batch_size)
     print("Total number of batches: " + str(total_batches))
@@ -56,10 +56,7 @@ def create_vector_embeddings_batched(questions: List[str], model: TransformerMod
             xc = model.create_vector_embedding(questions[x])
             records.append((str(x), xc, {'text': questions[x]}))
         # # upsert to Pinecone
-        pinecone_client.index_upsert(vectors=records, namespace=namespace)
+        pinecone_client.index_upsert(vectors=records, namespace=namespace, index_name=index_name)
         print("Completed Batch: " + str(i) + " Start: " + str(i) + " End: " + str(i_end))
-
-    # check number of records in the index
-    print(pinecone_client.get_index_stats(INDEX_NAME))
 
     # Vector; Tuple[str, List[float]]; Tuple[str, List[float], dict]; Dict[str, Any]`
